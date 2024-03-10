@@ -14,7 +14,7 @@ function App() {
   window.addEventListener('resize',handleResize);
   return (
     <main className="bg-[#E3E1D9] h-screen overflow-hidden">
-      <nav className = "min-w-full h-fit flex justify-center lg:items-center lg:justify-between">
+      <nav className = "min-w-full h-fit flex justify-center md:items-center md:justify-between">
         <div className = "font-bold ml-4 text-6xl">
           TODO
         </div>
