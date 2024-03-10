@@ -1,5 +1,6 @@
 import 'tailwindcss/tailwind.css';
 import {react,useState,useEffect} from 'react';
+import {Link} from 'react-router-dom'
 
 function App() {
   const [screen, setScreen] = useState(true);
@@ -30,7 +31,7 @@ function App() {
       
       </nav>
       <div className = "absolute top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%]">
-        <button className = " font-bold px-10 py-6 bg-black text-white border-white rounded-full">GET STARTED</button>
+        <button className = " font-bold px-10 py-6 bg-black text-white border-white rounded-full"><Link to = "/todos">GET STARTED</Link></button>
       </div>
         
     </main>
