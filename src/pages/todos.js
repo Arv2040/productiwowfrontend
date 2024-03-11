@@ -1,25 +1,38 @@
 import React from 'react'
-import {useState,useEffect} from 'react'
+import {useState} from 'react'
 import Todo from '../Components/Todo';
 
 export default function Todos() {
-    const [text,setText] = useState("")
+    const [text,setText] = useState(" ")
     const [todoarray,setTodoArray] = useState([]);
     function handleTextChange(e){
         setText(e.target.value);
     }
-    const handleTodoAdd = ()=>{
-       setTodoArray([...todoarray,text])
-       setText(" ");
+    const handleTodoAdd = (event)=>{
+       
+        setTodoArray([...todoarray,text])
+        setText(" ");
       
     }
+    window.addEventListener('keydown',(event)=>{
+        if(text!==" "){
+            if(event.key === 'Enter'){
+                setTodoArray([...todoarray,text])
+                setText(" ");
+            }
 
+        }
+        else{
+            return
+        }
+       
+    })
   return (
     <main className = "bg-[#E3E1D9] w-full h-screen overflow-x-hidden overflow-y-scroll">
         <h1 className = "font-bold w-full text-center text-6xl">TODOS</h1>
         <div className = "mt-10 w-full flex flex-col items-center ">
         <div className = "w-full flex justify-center h-full">
-            <input type="text" className = " border-2 border-black w-[30%] rounded-md" value = {text} onChange = {handleTextChange} />
+            <input type="text" className = " p-2 border-2 border-black w-[30%] rounded-md" value = {text} onChange = {handleTextChange} />
             <button onClick = {handleTodoAdd} className = "bg-black text-white p-2 rounded-md ml-4">AddTodo</button>
 
         </div>
