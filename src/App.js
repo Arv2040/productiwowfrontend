@@ -12,7 +12,10 @@ function App() {
         setScreen(false);
       }
   }
-  window.addEventListener('resize',handleResize);
+  document.addEventListener('resize',handleResize);
+  useEffect(() => {
+    console.log(process.env.REACT_APP_API_URL);
+  },[])
   return (
     <main className="bg-[#E3E1D9] h-screen overflow-hidden">
       <nav className = "min-w-full h-fit flex justify-center md:items-center md:justify-between">

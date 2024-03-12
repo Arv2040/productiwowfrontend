@@ -1,32 +1,55 @@
 import React from 'react'
-import {useState} from 'react'
+import {useState,useEffect} from 'react'
 import Todo from '../Components/Todo';
+import axios from 'axios';
 
 export default function Todos() {
+   
     const [text,setText] = useState(" ")
     const [todoarray,setTodoArray] = useState([]);
+   
+    
+    useEffect(()=>{
+       
+        axios.get(`${process.env.REACT_APP_API_URL}/todos`).then((res)=>{
+            
+        const data = res.data;
+           
+        setTodoArray(data);
+         
+
+        
+        }).catch((err)=>{
+            console.log(err.message);
+        })
+        
+    },[]);
+   
     function handleTextChange(e){
         setText(e.target.value);
     }
-    const handleTodoAdd = (event)=>{
+    const handleTodoAdd = async ()=>{
        
-        setTodoArray([...todoarray,text])
+        axios.post(`${process.env.REACT_APP_API_URL}/todos`,{
+            data:text, 
+        }).then((res)=>{
+            
+            
+            setTodoArray([...todoarray,res.data.data.newTodo]);
+        
+        }).catch((err)=>{
+
+        })
+
+        // setTodoArray([...todoarray,text])
+        
         setText(" ");
       
     }
-    window.addEventListener('keydown',(event)=>{
-        if(text!==" "){
-            if(event.key === 'Enter'){
-                setTodoArray([...todoarray,text])
-                setText(" ");
-            }
-
-        }
-        else{
-            return
-        }
-       
-    })
+    
+    
+    
+   
   return (
     <main className = "bg-[#E3E1D9] w-full h-screen overflow-x-hidden overflow-y-scroll">
         <h1 className = "font-bold w-full text-center text-6xl">TODOS</h1>
@@ -39,7 +62,8 @@ export default function Todos() {
         
         <section className = "w-full flex mt-10 items-center flex-col">
             {todoarray.map((element,index)=>{
-                return <Todo text = {element} index = {index} todoarray = {todoarray} setTodoArray = {setTodoArray} key = {index}/>
+                
+                return <Todo text = {element.todo_name} index = {element.id} todoarray = {todoarray} setTodoArray = {setTodoArray} key = {index}/>
             })}
 
         </section>
