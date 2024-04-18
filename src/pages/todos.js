@@ -3,6 +3,7 @@ import {useState,useEffect} from 'react'
 import Todo from '../Components/Todo';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import '../cssfiles/todos.css'
 
 export default function Todos() {
    const navigate = useNavigate();
@@ -65,17 +66,22 @@ export default function Todos() {
     
    
   return (
-    <main className = " w-full h-screen overflow-x-hidden overflow-y-scroll">
-        <div className = "font-bold w-full text-center text-6xl">TODOS</div>
-        <button className ="bg-black ml-2 p-2 rounded-lg  text-white " onClick = {handleLogout}>LOGOUT</button>
-        <div className = "mt-10 w-full flex flex-col items-center ">
-        <div className = "w-full flex justify-center h-full">
-            <input type="text" className = " p-2 border-2 border-black min-w-[30%] rounded-md" value = {text} onChange = {handleTextChange} />
-            <button onClick = {handleTodoAdd} className = "bg-black text-white p-2 rounded-md ml-4">AddTodo</button>
+    <main className = "todomain" >
+        <section className = "titleandlogout">
+        <div className = "todotitle" >Task Manager</div>
+        <button className = "logoutbutton"  onClick = {handleLogout}>LOGOUT</button>
+        </section>
+       
+       
+        
+      
+        <div className = "todoouter">
+            <input className = "todoinput" type="text" placeholder = "Enter Todo" value = {text} onChange = {handleTextChange} />
+            <button onClick = {handleTodoAdd} >Add</button>
 
         </div>
         
-        <section className = "w-full flex mt-10 items-center flex-col">
+        <section className = "todomap" >
             {todoarray.map((element,index)=>{
                 
                 return <Todo text = {element.todo_name} index = {element.id} todoarray = {todoarray} setTodoArray = {setTodoArray} key = {index}/>
@@ -83,7 +89,7 @@ export default function Todos() {
 
         </section>
         
-        </div>
+      
        
     </main>
   )

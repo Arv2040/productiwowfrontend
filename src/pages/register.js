@@ -1,6 +1,7 @@
 import React,{useState} from 'react'
 import axios from 'axios'
 import {useNavigate } from 'react-router-dom';
+import '../cssfiles/register.css'
 
 export default function Register() {
     const navigate = useNavigate();
@@ -28,11 +29,12 @@ export default function Register() {
     
   return (
     
-       <main >
-           <section>
+       <main className = "registermain" >
+           <section className = "registersection">
             <h1 >REGISTER</h1>
+            <div className = "authsection">
             <div >
-                <input value= {email} onChange = {(event)=>{setEmail(event.target.value)}} />
+                <input value= {email} placeholder = "Enter Email" onChange = {(event)=>{setEmail(event.target.value)}} />
             </div>
             <div >
                 <input value= {username} onChange = {(event)=>{setUsername(event.target.value)}}  type="text" name="" id="" placeholder = "Username" />
@@ -44,6 +46,9 @@ export default function Register() {
             <button onClick = {handleRegister}>
                 SUBMIT
             </button>
+                
+            </div>
+            
             
            </section>
     

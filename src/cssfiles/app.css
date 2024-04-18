@@ -2,6 +2,7 @@ body{
     margin:0px;
     padding:0px;
     overflow:hidden;
+   
 }
 
 .landingmain{
@@ -11,6 +12,7 @@ body{
     display:flex;
     justify-content: center;
     align-items:center;
+    
     
 }
 .outer{
@@ -100,10 +102,7 @@ button:hover{
 }
 
 @media (max-width: 950px) {
-    .landingmain{
-        background: white;
-
-    }
+   
 
     .title{
         font-size: 5rem;
