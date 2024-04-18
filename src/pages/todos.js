@@ -2,16 +2,25 @@ import React from 'react'
 import {useState,useEffect} from 'react'
 import Todo from '../Components/Todo';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 export default function Todos() {
-   
+   const navigate = useNavigate();
     const [text,setText] = useState(" ")
     const [todoarray,setTodoArray] = useState([]);
-   
+    const token = localStorage.getItem("accessToken");
+    function handleLogout(){
+        localStorage.removeItem("accessToken");
+        navigate('/');
+       }
     
     useEffect(()=>{
        
-        axios.get(`${process.env.REACT_APP_API_URL}/todos`).then((res)=>{
+        axios.get(`${process.env.REACT_APP_API_URL}/todos`,{
+            headers:{
+                'Authorization': `Bearer ${token}`
+            }
+        }).then((res)=>{
             
         const data = res.data;
            
@@ -32,6 +41,11 @@ export default function Todos() {
        
         axios.post(`${process.env.REACT_APP_API_URL}/todos`,{
             data:text, 
+        },
+        {
+            headers:{
+                'Authorization': `Bearer ${token}`
+            }
         }).then((res)=>{
             
             
@@ -51,11 +65,12 @@ export default function Todos() {
     
    
   return (
-    <main className = "bg-[#E3E1D9] w-full h-screen overflow-x-hidden overflow-y-scroll">
-        <h1 className = "font-bold w-full text-center text-6xl">TODOS</h1>
+    <main className = " w-full h-screen overflow-x-hidden overflow-y-scroll">
+        <div className = "font-bold w-full text-center text-6xl">TODOS</div>
+        <button className ="bg-black ml-2 p-2 rounded-lg  text-white " onClick = {handleLogout}>LOGOUT</button>
         <div className = "mt-10 w-full flex flex-col items-center ">
         <div className = "w-full flex justify-center h-full">
-            <input type="text" className = " p-2 border-2 border-black w-[30%] rounded-md" value = {text} onChange = {handleTextChange} />
+            <input type="text" className = " p-2 border-2 border-black min-w-[30%] rounded-md" value = {text} onChange = {handleTextChange} />
             <button onClick = {handleTodoAdd} className = "bg-black text-white p-2 rounded-md ml-4">AddTodo</button>
 
         </div>
@@ -67,6 +82,7 @@ export default function Todos() {
             })}
 
         </section>
+        
         </div>
        
     </main>

@@ -1,0 +1,135 @@
+body{
+    margin:0px;
+    padding:0px;
+    overflow:hidden;
+}
+
+.landingmain{
+    width:100vw;
+    height:100vh;
+    background: linear-gradient(90deg,black 50%,white 50%);
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    
+}
+.outer{
+    
+    height:60%;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position:relative;
+}
+.title{
+   
+    font-size:10rem;
+    font-weight: bold;
+    background: -webkit-linear-gradient(90deg,rgb(255, 255, 255) , rgb(0, 0, 0) );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: "Reddit Mono";
+    
+    
+}
+.nav{
+    position:absolute;
+    top:2%;
+
+    width: 100%;
+    padding:1em;
+    display:flex;
+    justify-content: flex-end;
+}
+.navcontainer{
+    display:flex;
+    width:fit-content;
+    justify-content: space-between;
+    margin-right:2.5rem;
+    
+    
+}
+button{
+    padding: 10px 20px;
+    margin: 0px 10px;
+    border-radius:15px;
+    color:black;
+    font-weight: bold;
+    background-color: inherit;
+    border:none;
+    font-family: monospace;
+    font-size:1em;
+   
+}
+button:hover{
+    cursor:pointer;
+    text-decoration: underline;
+}
+.login{
+    text-decoration: none;
+    color:black;
+    background-color: white;
+    padding:10px 30px;
+    border-radius:10px;
+
+}
+
+.login:hover,.register:hover{
+    text-decoration: underline;
+    
+}
+
+.register{
+    text-decoration: none;
+    color:white;
+    background-color: black;
+    padding:10px 30px;
+    border-radius:10px;
+}
+
+.authbuttons{
+   
+    width:100%;
+    position:absolute;
+    bottom:2%;
+    display:flex;
+    justify-content: space-evenly;
+    font-family: monospace;
+    
+}
+
+@media (max-width: 950px) {
+    .landingmain{
+        background: white;
+
+    }
+
+    .title{
+        font-size: 5rem;
+    }
+
+    .login{
+        border:2px solid black
+    }
+    .register{
+        border:1px solid white;
+    }
+    
+}
+
+@media(max-width:550px){
+    .nav{
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%,0%);
+    }
+    .title{
+       
+        font-size:3em;
+    }
+    .nav{
+        display:none;
+    }
+    
+}

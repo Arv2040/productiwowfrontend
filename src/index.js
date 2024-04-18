@@ -11,6 +11,8 @@ import {
   Route,
   Link,
 } from "react-router-dom";
+import Login from './pages/login';
+import Register from './pages/register';
 
 const router = createBrowserRouter([
   {
@@ -25,6 +27,18 @@ const router = createBrowserRouter([
       <Todos/>
     ),
   },
+  {
+    path:"login",
+    element:(
+      <Login/>
+    ),
+  },
+  {
+    path:"register",
+    element:(
+      <Register/>
+    ),
+  }
 ]);
 
 
