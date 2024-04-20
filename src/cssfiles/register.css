@@ -63,6 +63,23 @@ button{
     }
    
 }
+@media(max-width:600px){
+    .registermain{
+        background: white;
+    }
+    .registersection{
+        min-height: 100vh;
+        width:100vw;
+        border-radius:0px;
+        background-color: inherit;
+
+    }
+    h1{
+        font-size: 2em;
+    }
+   
+   
+}
 
 @media(max-width:440px){
     .registersection{

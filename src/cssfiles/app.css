@@ -102,17 +102,39 @@ button:hover{
 }
 
 @media (max-width: 950px) {
-   
+   .nav{
+        width:fit-content;  
+        right:0%;
+        padding:0px;
+   }
+   .navcontainer{
+    display:flex;
+    width:fit-content;
+    justify-content: space-between;
+    margin-right:0rem;
+    
+    
+    }
+    .navbutton{
+        width:fit-content;
+        height:fit-content;
+        padding:6px 10px;
+        font-size:5px;
+    }
 
     .title{
-        font-size: 5rem;
+        font-size: 2rem;
     }
 
     .login{
-        border:2px solid black
+        border:2px solid black;
+        font-size:7px;
+        padding:4px 12px;
     }
     .register{
         border:1px solid white;
+        font-size:7px;
+        padding:4px 12px;
     }
     
 }
@@ -130,5 +152,36 @@ button:hover{
     .nav{
         display:none;
     }
+    .title{
+        font-size: 2rem;
+    }
+
+    .login{
+        border:2px solid black;
+        font-size:7px;
+        padding:4px 12px;
+    }
+    .register{
+        border:1px solid white;
+        font-size:7px;
+        padding:4px 12px;
+    }
     
+}
+@media(max-width:400px){
+    .title{
+        font-size: 1rem;
+    }
+
+    .login{
+        border:2px solid black;
+        font-size:4px;
+        padding:3px 8px;
+    }
+    .register{
+        border:2px solid white;
+        font-size:4px;
+        padding:3px 8px;
+    }
+
 }

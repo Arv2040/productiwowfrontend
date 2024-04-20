@@ -13,6 +13,9 @@ import {
 } from "react-router-dom";
 import Login from './pages/login';
 import Register from './pages/register';
+import Choose from './pages/choose';
+import Journal from './pages/journal';
+import Pomodoro from './pages/pomodoro';
 
 const router = createBrowserRouter([
   {
@@ -38,6 +41,21 @@ const router = createBrowserRouter([
     element:(
       <Register/>
     ),
+  },{
+    path:"choose",
+    element:(
+      <Choose/>
+    )
+  },{
+    path:"journal",
+    element:(
+      <Journal/>
+    )
+  },{
+    path:"pomodoro",
+    element:(
+      <Pomodoro/>
+    )
   }
 ]);
 

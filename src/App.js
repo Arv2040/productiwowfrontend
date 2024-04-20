@@ -21,10 +21,10 @@ function App() {
        
       
             <div className = "navcontainer">
-            <button >Home</button>
-            <button>About</button>
-            <button >Community</button>
-            <button>Contact</button>
+            <button className = "navbutton" >Home</button>
+            <button className = "navbutton">About</button>
+            <button className = "navbutton" >Community</button>
+            <button className = "navbutton">Contact</button>
         </div>
 
    

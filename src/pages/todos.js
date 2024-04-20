@@ -77,7 +77,7 @@ export default function Todos() {
       
         <div className = "todoouter">
             <input className = "todoinput" type="text" placeholder = "Enter Todo" value = {text} onChange = {handleTextChange} />
-            <button onClick = {handleTodoAdd} >Add</button>
+            <button className = "todoadd" onClick = {handleTodoAdd} >Add</button>
 
         </div>
         
