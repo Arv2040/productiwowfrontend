@@ -21,7 +21,7 @@ export default function Sidebar(props) {
       
        
       
-        <p className = "sidebartext">{props.text}</p>
+        <p className = "sidebartext">{props.text.substring(0,5)}</p>
 
         <div className = "iconss">
         <button onClick = {handleAdd} className = "addicon">

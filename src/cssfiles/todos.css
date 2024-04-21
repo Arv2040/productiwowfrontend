@@ -5,10 +5,11 @@
     color:white;
     display:flex;
     flex-direction: column;
-    justify-content:space-around;
+    justify-content:space-between;
     align-items: center;
     overflow: scroll;
     scrollbar-width: none;
+   
     
    
 }
@@ -17,13 +18,13 @@
     width:100%;
     display:flex;
     justify-content:center;
+  
 }
 
 .todomap{
-   border:1px solid gray;
+ 
     padding:10px;
-    max-width:50em;
-    width:50em;
+    width:50%;
     height:70%;
     overflow: scroll;
     scrollbar-width: none;
@@ -31,6 +32,7 @@
     justify-content: space-evenly;
     flex-wrap: wrap;
     row-gap: 10px;
+ 
    
    
 }
@@ -40,16 +42,23 @@
     justify-content: space-between;
     color:black;
     font-weight: bold;
-    width: fit-content;
-    background-color: #5b5b5c;
-    height:40%;
+    width: 10rem;
+    background-color: gray;
+    border:2px solid black;
+    aspect-ratio: 1;
+    height:10rem;
     border-radius:10px;
     padding:6px;
+    
 
 
 }
 .todoinput{
     color:black;
+    border:2px solid black;
+    text-align:center;
+    padding: 0px 50px;
+    
   
     
 }
@@ -58,7 +67,7 @@ p{
     text-align: center;
 }
 .todotitle{
-    font-size: 5em;
+    font-size: 2em;
     height: fit-content;
     font-weight: bolder;
     background: -webkit-linear-gradient(90deg,rgb(255, 255, 255) , rgb(0, 0, 0) );
@@ -68,94 +77,60 @@ p{
     display:flex;
     justify-content: space-between;
     
+    width:50%;
+    
 }
 
 .titleandlogout{
     display:flex;
     width:100%;
     justify-content: space-between;
-  
+    align-items: center;
+    
     height: fit-content;
 }
 .logoutbutton{
     width:5rem;
     padding:0px;
-}
-
-@media(max-width:840px){
-    .todomap{
-        border:1px solid gray;
-        padding:10px;
-         max-width:40em;
-         width:40em;
-         height:70%;
-         overflow: scroll;
-         scrollbar-width: none;
-         display:flex;
-         justify-content: space-evenly;
-         flex-wrap: wrap;
-         row-gap: 2em;
-         row-gap: 5px;
-        
-     }
-}
-@media(max-width:670px){
-    .todomap{
-        border:1px solid gray;
-        padding:10px;
-         max-width:30em;
-         width:30em;
-         height:70%;
-         overflow: scroll;
-         scrollbar-width: none;
-         display:flex;
-         justify-content: space-evenly;
-         flex-wrap: wrap;
-         row-gap: 2em;
-         row-gap: 5px;
-        
-     }
-}
-@media(max-width:625px){
-    
-    .todomap{
-        max-width:70%;
-        width:70%;
-    }
-}
-    .logoutbutton{
-    padding:0;
+    height:2rem;
+    padding:4px 16px;
+    margin-right:2rem;
+    text-align: center;
+    background-color: black;
     color:white;
-    }
-    .todotitle{
-    font-size:1.5em;
-    }
-    .todoinput{
-    padding:2px;
-    height:20%;
-    }
-    .todoadd{
-    font-size:5px;
-    padding:4px 10px;
+    border-radius:10px;
 }
-@media (max-width:468px){
-    .todotitle{
-        font-size: 2em;
-    }
+.todoadd{
+    background-color: black;
+    color:white;
+    border-radius:5px;
+    margin-left:2rem;
+}
+.back{
+    background-color: black;
+    color:white;
+    border-radius:5px;
+    align-self: flex-end;
+    margin-right:2px;
 }
 
-@media(max-width:435px){
-    .todotitle{
-        font-size: 1em;
-    }
+.indiflex{
+    
+    display:flex;
+    justify-content: space-between;
 }
-@media(max-width:400px){
-    .todotitle{
-        font-size:10px;
-    }
-    .logoutbutton{
-        font-size:5px;
-        
-        
-    }
+    
+
+.indiicon{
+    background-color: black;
+    color:white;
+    border:none;
+    border-radius:5px;
+}
+
+.inditext{
+    font-family:monospace;
+    border-bottom: 1px solid black;
+    width:100%;
+    
 }

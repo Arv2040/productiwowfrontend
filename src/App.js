@@ -1,12 +1,16 @@
 import {react,useState,useEffect} from 'react';
 import {Link} from 'react-router-dom';
 import './cssfiles/app.css'
+import About from './Components/About';
+
+
 
 function App() {
  
  
   return (
-    <main className = "landingmain">
+    <>
+        <main className = "landingmain">
       <div className = "outer">
 
        <div className = "title">
@@ -14,7 +18,7 @@ function App() {
       </div>
       <div className = "authbuttons">
         <Link className = "login" to ="/login">LOGIN</Link>
-        <Link className = "register" to ="/register">REGISTER</Link>
+        <Link className = "registerr" to ="/register">REGISTER</Link>
       </div>
       </div>
       <nav className = "nav">
@@ -22,9 +26,9 @@ function App() {
       
             <div className = "navcontainer">
             <button className = "navbutton" >Home</button>
-            <button className = "navbutton">About</button>
-            <button className = "navbutton" >Community</button>
-            <button className = "navbutton">Contact</button>
+            <Link to= "/" className = "navbutton">About</Link>
+           
+           
         </div>
 
    
@@ -32,10 +36,14 @@ function App() {
       </nav>
      
      
-      
+    
         
     </main>
-  );
-}
+    
+    <About/>
+    
+    </>
 
+  )
+}
 export default App;

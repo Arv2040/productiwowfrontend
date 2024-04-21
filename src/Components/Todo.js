@@ -1,32 +1,24 @@
-import React, { useRef } from 'react';
-import axios from 'axios';
+import React, { useRef,useEffect } from 'react';
+
 
 export default function Todo(props) {
   const paragraphRef = useRef(null);
   function toggleDone() {
-    paragraphRef.current.classList.toggle('line-through');
-  }
+    const paragraph = paragraphRef.current;
+    if (paragraph.style.textDecoration === "line-through") {
+        paragraph.style.textDecoration = "none";
+    } else {
+        paragraph.style.textDecoration = "line-through";
+    }
+}
+
 
   function removeTodo() {
 
-    axios.delete(`${process.env.REACT_APP_API_URL}/todos`,{
-      data:{
-        id:props.index
-      },
-      headers:{
-        Authorization: `Bearer ${localStorage.getItem('accessToken')}`
-      }
-     
-      
-     
-    }).then((res)=>{
-     props.setTodoArray(res.data);
-    
-      
-      
-    }).catch((err)=>{
-     
-    })
+      const newarray = props.todoarray.filter((element)=>{
+          return element !== props.text;
+      })
+      props.setTodoArray(newarray);
    
   }
  
@@ -34,13 +26,15 @@ export default function Todo(props) {
   return (
     <main className = "indtodo" >
       
-      <p ref={paragraphRef} >{props.text}</p>
-      <section>
-      <button onClick={toggleDone} >Done</button>
-      <button onClick={removeTodo}>Remove</button>
+      <p className = "inditext" ref={paragraphRef} >{props.text}</p>
+      <section className = "indiflex">
+      <button className = "indiicon"  onClick={toggleDone} >
+          Done
+      </button>
+      <button  className = "indiicon" onClick={removeTodo}>Remove</button>
 
       </section>
-     
+        
     </main>
   );
 }

@@ -28,6 +28,9 @@
     align-items: center;
     justify-content: center;
 }
+.sidebartext::after{
+    content : "...";
+}
 
 .time{
     display:flex;

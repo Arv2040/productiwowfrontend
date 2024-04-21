@@ -1,5 +1,49 @@
 .pomodoromain{
     width:100vw;
     height:100vh;
-    /* background: linear-gradient(90deg,black 50%,white 50%); */
+    background: linear-gradient(90deg,black 50%,white 50%);
+    display:flex;
+    flex-direction: column;
+    row-gap: 10px;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+
+.timer{
+    background-color: gray;
+    border:2px solid black;
+    width:25rem;
+    height:25rem;
+    aspect-ratio: 1;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 5rem;
+    border-radius: 10px;
+}
+.break{
+    background-color: red;
+   
+    width:30%;
+    border-radius:10px;
+    font-weight:bold;
+    font-family: monospace;
+}
+
+.back{
+    background-color: black;
+    color:white;
+    border-radius:5px;
+    align-self: flex-end;
+    margin-right:2px;
+}
+
+
+@media (max-width:450px){
+    .timer{
+        width:20rem;
+        height:20rem;
+        font-size:3rem;
+    }
 }

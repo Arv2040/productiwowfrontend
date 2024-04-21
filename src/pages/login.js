@@ -1,5 +1,5 @@
 import React,{useState} from 'react'
-import axios from 'axios';
+
 import '../cssfiles/login.css'
 import { useNavigate } from 'react-router-dom';
 
@@ -7,42 +7,30 @@ export default function Login() {
     const navigate = useNavigate();
     const[username,setUsername] = useState("");
     const[password,setPassword] = useState("");
-    async function handleLogin(){
-        try{
-            const response = await axios.post(`${process.env.REACT_APP_API_URL}/users/login`,{
-                username,
-                password
-            });
-            localStorage.setItem("accessToken",response.data.token);
-            if(response.status === 200){
-                navigate('/todos');
-            }
-            else{
-                navigate('/');
-            }
-        }
-        catch(error){
-            console.log(error.message);
-        }
+    function handleLogin(){
+       
+    
+            navigate('/choose');
+            
+      
         
     }
   return (
    <main className = "loginmain"  >
        <section className = "loginsection">
-        <h1>LOGIN</h1>
-        <div className = "authsection">
-        <div className = "username" >
-            <input value = {username} onChange = {(event)=>{setUsername(event.target.value)}}  type="text" name="" id="" placeholder = "Username" />
-        </div>
+        <h1 className = "logintitle">LOGIN</h1>
        
-        <div className = "password">
-            <input value = {password} onChange = {(event)=>{setPassword(event.target.value)}}  type="password" name="" id="" placeholder = "Password" />
-        </div>
-        <button onClick = {handleLogin}>
+       
+            <input className = "logininput" value = {username} onChange = {(event)=>{setUsername(event.target.value)}}  type="text" name="" id="" placeholder = "Username" />
+      
+       
+            <input className = "logininput" value = {password} onChange = {(event)=>{setPassword(event.target.value)}}  type="password" name="" id="" placeholder = "Password" />
+       
+        <button className = "loginsubmit" onClick = {handleLogin}>
             SUBMIT
         </button>
 
-        </div>
+        
        
       
         

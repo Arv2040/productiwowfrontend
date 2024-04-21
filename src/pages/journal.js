@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
 import '../cssfiles/journal.css'
 import Sidebar from '../Components/Sidebar';
+import { useNavigate } from 'react-router-dom';
 
 export default function Journal() {
+    const navigate = useNavigate();
     const[journal,setJournal] = useState(" ");
    
     const handleJournalChange = (event)=>{
@@ -31,6 +33,11 @@ export default function Journal() {
             }
         </section>
         <section className="textsection">
+            <button onClick = {()=>{
+                navigate('/choose');
+            }} className = "back">
+                BACK
+            </button>
             <p className = "journaltitle">Spill the Tea here, as much as you like :)</p>
            
             <textarea value = {journal} onChange= {handleJournalChange} className = "textarea" name="" id="" cols="100" rows="20"></textarea>

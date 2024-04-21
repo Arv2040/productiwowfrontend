@@ -10,6 +10,15 @@
     overflow: scroll;
     scrollbar-width: none;
 }
+.choosebuttons{
+    border:none;
+    border-radius:10px;
+    padding:4px 12px;
+}
+.choosebuttons:hover{
+    text-decoration: underline;
+    cursor:pointer;
+}
 
 .todosection,.Journal,.Pomodoro{
     border:2px solid black;
@@ -23,7 +32,7 @@
     justify-content: space-evenly;
     align-items:center;
     margin:2rem;
-    transition: width 1s,height 1s;
+    transition: width 0.5s,height 0.5s;
 
 }
 .todosection:hover,.Journal:hover,.Pomodoro:hover{
@@ -35,6 +44,14 @@
     height:30%;
 }
 
+.logout{
+    position:absolute;
+    top:0.5rem;
+    right:2rem;
+    background-color: black;
+    color:white;
+    border-radius:5px;
+}
 
 @media(max-width:400px){
     .choosemain{

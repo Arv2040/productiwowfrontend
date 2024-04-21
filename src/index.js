@@ -16,6 +16,7 @@ import Register from './pages/register';
 import Choose from './pages/choose';
 import Journal from './pages/journal';
 import Pomodoro from './pages/pomodoro';
+import About from './Components/About';
 
 const router = createBrowserRouter([
   {
@@ -57,6 +58,7 @@ const router = createBrowserRouter([
       <Pomodoro/>
     )
   }
+ 
 ]);
 
 

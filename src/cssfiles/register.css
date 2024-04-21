@@ -1,94 +1,79 @@
+
+
 .registermain{
     width:100vw;
     height:100vh;
     background: linear-gradient(90deg,black 50%,white 50%);
     display:flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items:center;
 }
 h1{
     
    
     font-family: "Reddit Mono";
-    font-size:5em;
   
-    text-align:center;
+    
 }
 .registersection{
-    z-index: 5;
-    background-color: gray;
-  
+    
+   
+   
     border-radius:10px;
-    width: 40%;
-    height:70%;
-    min-height: 70%;
-    scrollbar-width: none;
+    width:50%;
+    height:100%;
     overflow: scroll;
     display:flex;
     flex-direction:column;
     justify-content: space-evenly;
+    align-items: center;
+    scrollbar-width: none;
+    
     
 
 
 }
-.authsection{
+/* .authsection{
    
     height:50%;
     display:flex;
-    justify-content:space-evenly;
+    justify-content:flex-start;
     align-items:center;
     flex-direction:column;
-   
-    
-}
-input{
+    row-gap: 10px;
+    border:2px solid green;
+} */
+.registerinput{
     padding:10px 30px;
+    min-width:70%;
     text-align:center;
     border-radius:10px;
 }
-button{
+.registersubmit{
     background-color:black;
     color:white;
     width:fit-content;
+    border-radius:10px;
+    padding:6px 18px;
 }
 
 
-@media(max-width:940px){
-    .registersection{
-        height:50%;
-        width:fit-content;
-    }
-    h1{
-        font-size: 2em;
-    }
+.registertitle{
+    font-size: 5rem;
    
-}
-@media(max-width:600px){
-    .registermain{
-        background: white;
-    }
-    .registersection{
-        min-height: 100vh;
-        width:100vw;
-        border-radius:0px;
-        background-color: inherit;
-
-    }
-    h1{
-        font-size: 2em;
-    }
-   
-   
+    width:100%;
 }
 
-@media(max-width:440px){
-    .registersection{
-        height:50%;
-       
+
+@media(max-width:735px){
+    .registertitle{
+        font-size:3rem;
     }
-    h1{
-        font-size: 2em;
+
+}
+@media(max-width:450px){
+    .registertitle{
+        font-size:2rem;
     }
-    
-    
+
 }

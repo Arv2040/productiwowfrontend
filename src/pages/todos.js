@@ -1,7 +1,7 @@
 import React from 'react'
 import {useState,useEffect} from 'react'
 import Todo from '../Components/Todo';
-import axios from 'axios';
+
 import { useNavigate } from 'react-router-dom';
 import '../cssfiles/todos.css'
 
@@ -9,54 +9,24 @@ export default function Todos() {
    const navigate = useNavigate();
     const [text,setText] = useState(" ")
     const [todoarray,setTodoArray] = useState([]);
-    const token = localStorage.getItem("accessToken");
-    function handleLogout(){
-        localStorage.removeItem("accessToken");
-        navigate('/');
+   
+    function handleBack(){
+       
+        navigate('/choose');
        }
     
-    useEffect(()=>{
-       
-        axios.get(`${process.env.REACT_APP_API_URL}/todos`,{
-            headers:{
-                'Authorization': `Bearer ${token}`
-            }
-        }).then((res)=>{
-            
-        const data = res.data;
-           
-        setTodoArray(data);
-         
-
+   
         
-        }).catch((err)=>{
-            console.log(err.message);
-        })
-        
-    },[]);
+  
    
     function handleTextChange(e){
         setText(e.target.value);
     }
     const handleTodoAdd = async ()=>{
        
-        axios.post(`${process.env.REACT_APP_API_URL}/todos`,{
-            data:text, 
-        },
-        {
-            headers:{
-                'Authorization': `Bearer ${token}`
-            }
-        }).then((res)=>{
-            
-            
-            setTodoArray([...todoarray,res.data.data.newTodo]);
-        
-        }).catch((err)=>{
+       
 
-        })
-
-        // setTodoArray([...todoarray,text])
+        setTodoArray([...todoarray,text])
         
         setText(" ");
       
@@ -69,7 +39,7 @@ export default function Todos() {
     <main className = "todomain" >
         <section className = "titleandlogout">
         <div className = "todotitle" >Task Manager</div>
-        <button className = "logoutbutton"  onClick = {handleLogout}>LOGOUT</button>
+        <button className = "logoutbutton"  onClick = {handleBack}>BACK</button>
         </section>
        
        
@@ -84,7 +54,7 @@ export default function Todos() {
         <section className = "todomap" >
             {todoarray.map((element,index)=>{
                 
-                return <Todo text = {element.todo_name} index = {element.id} todoarray = {todoarray} setTodoArray = {setTodoArray} key = {index}/>
+                return <Todo text = {element}  todoarray = {todoarray} setTodoArray = {setTodoArray} key = {index}/>
             })}
 
         </section>

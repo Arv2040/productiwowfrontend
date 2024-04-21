@@ -1,0 +1,48 @@
+.aboutmain{
+    width:100vw;
+    height:100vh;
+    display:flex;
+   
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(90deg,black 50%,white 50%);
+    
+    overflow:scroll;
+    scrollbar-width: none;
+   
+}
+
+.aboutsection{
+    font-family: monospace;
+    line-height: 2rem;
+    height:100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width:50%;
+   
+    overflow: scroll;
+    scrollbar-width: none;
+    text-wrap:wrap;
+}
+
+.imagesection{
+  
+    width:50%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.img{
+    width:50%;
+    height:50%;
+    aspect-ratio: 1;
+    border-radius: 10px;
+}
+
+
+@media (max-width:550px){
+    .aboutsection{
+        line-height: 1rem;
+    }
+}
