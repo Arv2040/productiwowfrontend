@@ -2,6 +2,7 @@ import {react,useState,useEffect} from 'react';
 import {Link} from 'react-router-dom';
 import './cssfiles/app.css'
 import About from './Components/About';
+import Contact from './Components/Contact';
 
 
 
@@ -26,7 +27,8 @@ function App() {
       
             <div className = "navcontainer">
             <button className = "navbutton" >Home</button>
-            <Link to= "/" className = "navbutton">About</Link>
+            <a href = "#about" className = "navbutton">About</a>
+            <a href = "#contact" className = "navbutton">Contact</a>
            
            
         </div>
@@ -41,6 +43,7 @@ function App() {
     </main>
     
     <About/>
+    <Contact/>
     
     </>
 

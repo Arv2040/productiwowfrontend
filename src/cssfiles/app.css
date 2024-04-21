@@ -1,11 +1,26 @@
 body{
     margin:0px;
     padding:0px;
-    overflow: scroll;
-    scrollbar-width: none;
+   
+   
+    
+
     
    
 }
+body::-webkit-scrollbar {
+    display: none;
+}
+
+
+body {
+    -ms-overflow-style: none;
+}
+
+
+
+
+
 
 .landingmain{
     width:100vw;
